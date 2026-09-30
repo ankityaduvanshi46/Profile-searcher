@@ -5,8 +5,5 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const isAuth = await getSession();
-  if (!isAuth) {
-    return NextResponse.json({ authenticated: false }, { status: 401 });
-  }
-  return NextResponse.json({ authenticated: true });
+  return NextResponse.json({ authenticated: Boolean(isAuth) });
 }

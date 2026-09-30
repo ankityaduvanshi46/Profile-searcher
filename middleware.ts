@@ -63,7 +63,10 @@ export async function middleware(request: NextRequest) {
   }
 
   const isApi = pathname.startsWith("/api/");
-  const isAuthEndpoint = pathname === "/api/auth/login" || pathname === "/api/auth/logout";
+  const isAuthEndpoint =
+    pathname === "/api/auth/login" ||
+    pathname === "/api/auth/logout" ||
+    pathname === "/api/auth/me";
   const isPublicAsset = pathname.startsWith("/_next") || pathname.includes(".");
 
   if (isApi && !isAuthEndpoint && !isPublicAsset) {
@@ -107,5 +110,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"]
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|favicon.png|icon.svg).*)"]
 };
