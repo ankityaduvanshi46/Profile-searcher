@@ -3,7 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Influencer Finder // Automated Discovery & Sheet Sync",
-  description: "Production-grade Instagram influencer discovery, multi-agent filter & scoring engine, and automated Google Sheets synchronizer."
+  description: "Production-grade Instagram influencer discovery, multi-agent filter & scoring engine, and automated Google Sheets synchronizer.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg"
+  }
 };
 
 export default function RootLayout({
