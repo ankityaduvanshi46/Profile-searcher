@@ -38,7 +38,8 @@ export default function HomePage() {
     try {
       const res = await fetch("/api/auth/me");
       if (res.ok) {
-        setIsAuthenticated(true);
+        const data = await res.json();
+        setIsAuthenticated(data.authenticated === true);
       } else {
         setIsAuthenticated(false);
       }
